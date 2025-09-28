@@ -141,7 +141,7 @@ export default function Hero() {
               <span className="text-sm font-medium">✨ Custom Designs</span>
             </div>
             <div className="absolute -bottom-4 -left-4 bg-background border rounded-lg px-3 py-2 shadow-lg">
-              <span className="text-sm font-medium">🚀 Fast Delivery</span>
+              <span className="text-sm font-medium">Fast Delivery</span>
             </div>
           </div>
         </div>
