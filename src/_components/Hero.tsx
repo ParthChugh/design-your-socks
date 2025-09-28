@@ -116,7 +116,7 @@ export default function Hero() {
                   "https://cdn.hercules.app/file_mzsELZDjB1DZ7b4oylJFM2UH", // socks2.jpg
                   "https://cdn.hercules.app/file_cALuCwK2kknSRMhY5jtYn2Nb", // socks5.jpg
                   "https://cdn.hercules.app/file_h5KEBQQsQJLA3udsMIsgoyap", // socks6.jpg
-                  "https://cdn.hercules.app/file_IzLbgi1WU8C2xpHzuVnDgLdl"  // socks4.jpg (repeat)
+                  "https://cdn.hercules.app/file_8q86OBxhJTYZ4GmPYPD79e1k"  // socks7.jpg
                 ].map((imageUrl, i) => (
                   <div 
                     key={i}
