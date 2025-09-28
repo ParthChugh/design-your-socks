@@ -133,10 +133,17 @@ export default function Portfolio() {
             </div>
           </div>
           
-          <Button size="lg">
+          <Button 
+            size="lg"
+            onClick={() => window.open('https://drive.google.com/drive/folders/1iLC2QJU4Tb_9FCAN7iLiu5YZAjLayvnY?usp=drive_link', '_blank')}
+          >
             View Complete Portfolio
             <ExternalLink className="ml-2 h-5 w-5" />
           </Button>
+          
+          <p className="text-sm text-muted-foreground mt-3">
+            Browse our complete portfolio on Google Drive with detailed project galleries
+          </p>
         </div>
       </div>
     </section>
