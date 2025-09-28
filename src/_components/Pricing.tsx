@@ -8,7 +8,7 @@ export default function Pricing() {
     {
       name: "Design Only",
       icon: <Zap className="h-6 w-6" />,
-      price: "$497",
+      price: "$297",
       originalPrice: null,
       description: "Perfect for entrepreneurs with existing manufacturing connections",
       badge: null,
