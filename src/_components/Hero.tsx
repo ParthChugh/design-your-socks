@@ -109,15 +109,24 @@ export default function Hero() {
           <div className="relative">
             <div className="relative rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 p-8 backdrop-blur-sm">
               <div className="grid grid-cols-3 gap-4">
-                {/* Mock sock designs */}
-                {Array.from({ length: 6 }).map((_, i) => (
+                {/* Real sock designs */}
+                {[
+                  "https://cdn.hercules.app/file_IzLbgi1WU8C2xpHzuVnDgLdl", // socks4.jpg
+                  "https://cdn.hercules.app/file_oG69oriAI2ONYm9u8zoSA6U3", // socks3.jpg
+                  "https://cdn.hercules.app/file_mzsELZDjB1DZ7b4oylJFM2UH", // socks2.jpg
+                  "https://cdn.hercules.app/file_cALuCwK2kknSRMhY5jtYn2Nb", // socks5.jpg
+                  "https://cdn.hercules.app/file_h5KEBQQsQJLA3udsMIsgoyap", // socks6.jpg
+                  "https://cdn.hercules.app/file_IzLbgi1WU8C2xpHzuVnDgLdl"  // socks4.jpg (repeat)
+                ].map((imageUrl, i) => (
                   <div 
                     key={i}
-                    className="aspect-square rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-border/50 flex items-center justify-center"
+                    className="aspect-square rounded-lg overflow-hidden border-2 border-border/50 group hover:scale-105 transition-transform duration-300"
                   >
-                    <div className="text-center text-xs text-muted-foreground">
-                      Sock Design #{i + 1}
-                    </div>
+                    <img 
+                      src={imageUrl} 
+                      alt={`Professional sock design ${i + 1}`}
+                      className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
+                    />
                   </div>
                 ))}
               </div>
