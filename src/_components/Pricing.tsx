@@ -96,14 +96,14 @@ export default function Pricing() {
               }`}
             >
               {plan.badge && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <Badge className="bg-primary text-primary-foreground px-4 py-1">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                  <Badge className="bg-primary text-primary-foreground px-4 py-1 text-sm font-semibold shadow-lg">
                     {plan.badge}
                   </Badge>
                 </div>
               )}
 
-              <CardHeader className="text-center pb-8">
+              <CardHeader className="text-center pb-8 pt-8">
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <div className="p-2 rounded-lg bg-primary/10 text-primary">
                     {plan.icon}
