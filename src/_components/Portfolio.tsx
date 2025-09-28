@@ -11,7 +11,7 @@ export default function Portfolio() {
       category: "Sports & Fitness",
       description: "Moisture-wicking compression socks with ergonomic cushioning and anti-blister technology.",
       tags: ["Compression", "Moisture-Wicking", "Athletic"],
-      image: "gradient-to-br from-blue-400 to-blue-600"
+      image: "https://cdn.hercules.app/file_h5KEBQQsQJLA3udsMIsgoyap"
     },
     {
       title: "Luxury Business Collection", 
@@ -72,7 +72,16 @@ export default function Portfolio() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {projects.map((project, index) => (
             <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300">
-              <div className={`h-48 bg-${project.image} relative overflow-hidden`}>
+              <div className="h-48 relative overflow-hidden">
+                {project.image.startsWith('http') ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className={`w-full h-full bg-${project.image}`} />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
