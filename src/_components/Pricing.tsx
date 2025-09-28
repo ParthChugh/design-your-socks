@@ -28,7 +28,7 @@ export default function Pricing() {
     {
       name: "Design + Production Files",
       icon: <Star className="h-6 w-6" />,
-      price: "$797",
+      price: "$497",
       originalPrice: "$997",
       description: "Most comprehensive package for serious sock entrepreneurs",
       badge: "Most Popular",
