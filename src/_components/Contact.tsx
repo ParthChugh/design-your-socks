@@ -251,8 +251,8 @@ export default function Contact() {
                               <SelectValue placeholder="Select service type" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="design_only">Design Only ($497)</SelectItem>
-                              <SelectItem value="design_production">Design + Production Files ($797)</SelectItem>
+                              <SelectItem value="design_only">Design Only ($297)</SelectItem>
+                              <SelectItem value="design_production">Design + Production Files ($497)</SelectItem>
                               <SelectItem value="full_service">Full-Service Partnership (Custom)</SelectItem>
                             </SelectContent>
                           </Select>
