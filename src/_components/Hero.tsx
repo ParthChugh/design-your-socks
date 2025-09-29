@@ -1,17 +1,36 @@
+import { ArrowRight, Star, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
-import { ArrowRight, Sparkles, TrendingUp, ExternalLink } from "lucide-react";
+import { Badge } from "@/components/ui/badge.tsx";
 
 export default function Hero() {
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-background via-background to-muted/30 flex items-center overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMiIgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjAzIi8+Cjwvc3ZnPgo=')] opacity-40"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <div className="relative overflow-hidden bg-gradient-to-br from-background to-muted/50 min-h-screen">
+      {/* Brand Header */}
+      <div className="container mx-auto px-4 pt-6">
+        <div className="flex items-center space-x-3">
+          <div className="text-3xl">🧦</div>
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent font-serif">
+            Designyoursock
+          </h1>
+        </div>
+      </div>
+
+      {/* Hero Content */}
+      <div className="container mx-auto px-4 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
           <div className="space-y-8">
@@ -37,7 +56,7 @@ export default function Hero() {
               <Button 
                 size="lg" 
                 className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
-                onClick={() => scrollToSection("contact")}
+                onClick={scrollToContact}
               >
                 Get Your Free Quote
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -46,10 +65,10 @@ export default function Hero() {
                 variant="outline" 
                 size="lg" 
                 className="text-lg px-8 py-6 border-2 hover:bg-accent"
-                onClick={() => scrollToSection("portfolio")}
+                onClick={scrollToPricing}
               >
-                View Portfolio
-                <ExternalLink className="ml-2 w-5 h-5" />
+                View Pricing
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
 
@@ -119,6 +138,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
