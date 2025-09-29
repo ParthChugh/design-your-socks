@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button.tsx";
-import { ArrowRight, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, Sparkles, TrendingUp, ExternalLink } from "lucide-react";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -7,150 +7,117 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
-      {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between px-6 py-4 lg:px-8">
-        <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <Sparkles className="h-6 w-6" />
-          </div>
-          <span className="text-xl font-bold">DesignYourSocks</span>
-        </div>
-        
-        <div className="hidden md:flex items-center gap-8">
-          <button 
-            onClick={() => scrollToSection("services")}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Services
-          </button>
-          <button 
-            onClick={() => scrollToSection("process")}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Process
-          </button>
-          <button 
-            onClick={() => scrollToSection("portfolio")}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Portfolio
-          </button>
-          <button 
-            onClick={() => scrollToSection("pricing")}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Pricing
-          </button>
-          <Button 
-            onClick={() => scrollToSection("contact")}
-            className="ml-4"
-          >
-            Get Started
-          </Button>
-        </div>
-      </nav>
-
-      {/* Hero Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
+    <section className="relative min-h-screen bg-gradient-to-br from-background via-background to-muted/30 flex items-center overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMiIgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjAzIi8+Cjwvc3ZnPgo=')] opacity-40"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 text-sm">
-              <TrendingUp className="h-4 w-4 text-primary" />
-              <span>Turn Your Designs into a Profitable Business</span>
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-medium text-primary">
+                <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                Professional Sock Design Service
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
+                Transform Your
+                <span className="text-primary"> Sock Ideas</span> Into 
+                <span className="text-primary"> Production-Ready</span> Designs
+              </h1>
+              
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+                From concept to manufacturing partnerships, we help entrepreneurs launch successful sock brands with expert design services and 48-hour delivery.
+              </p>
             </div>
-            
-            <h1 className="text-4xl font-bold tracking-tight text-balance lg:text-6xl">
-              From Concept to 
-              <span className="text-primary"> Custom Socks</span> 
-              in Days, Not Months
-            </h1>
-            
-            <p className="text-xl text-muted-foreground text-balance max-w-2xl">
-              Professional sock design service that transforms your ideas into production-ready files. 
-              We handle everything from concept to manufacturing partnerships, so you can focus on building your brand.
-            </p>
-            
+
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
+                className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => scrollToSection("contact")}
-                className="text-base px-8 py-4"
               >
-                Start Your Design Project
-                <ArrowRight className="ml-2 h-5 w-5" />
+                Get Your Free Quote
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button 
                 variant="outline" 
-                size="lg"
+                size="lg" 
+                className="text-lg px-8 py-6 border-2 hover:bg-accent"
                 onClick={() => scrollToSection("portfolio")}
-                className="text-base px-8 py-4"
               >
-                View Our Work
+                View Portfolio
+                <ExternalLink className="ml-2 w-5 h-5" />
               </Button>
             </div>
-            
-            <div className="flex items-center gap-8 pt-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold">500+</div>
-                <div className="text-sm text-muted-foreground">Designs Created</div>
+
+            {/* Social Proof */}
+            <div className="flex flex-wrap items-center gap-6 pt-6">
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <div key={i} className="w-8 h-8 rounded-full bg-primary/20 border-2 border-background flex items-center justify-center text-xs font-semibold text-primary">
+                      {i}
+                    </div>
+                  ))}
+                </div>
+                <span className="text-sm text-muted-foreground">500+ Designs Created</span>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">48hr</div>
-                <div className="text-sm text-muted-foreground">Avg. Turnaround</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">97%</div>
-                <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+              <div className="text-sm text-muted-foreground">
+                ⚡ 48hr Delivery • 🎯 97% Satisfaction • 🔄 Unlimited Revisions
               </div>
             </div>
           </div>
-          
+
+          {/* Right Side - Sock Showcase */}
           <div className="relative">
-            <div className="relative rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 p-8 backdrop-blur-sm">
-              <div className="grid grid-cols-3 gap-4">
-                {/* Real sock designs */}
-                {[
-                  "https://cdn.hercules.app/file_IzLbgi1WU8C2xpHzuVnDgLdl", // socks4.jpg
-                  "https://cdn.hercules.app/file_oG69oriAI2ONYm9u8zoSA6U3", // socks3.jpg
-                  "https://cdn.hercules.app/file_mzsELZDjB1DZ7b4oylJFM2UH", // socks2.jpg
-                  "https://cdn.hercules.app/file_cALuCwK2kknSRMhY5jtYn2Nb", // socks5.jpg
-                  "https://cdn.hercules.app/file_h5KEBQQsQJLA3udsMIsgoyap", // socks6.jpg
-                  "https://cdn.hercules.app/file_8q86OBxhJTYZ4GmPYPD79e1k"  // socks7.jpg
-                ].map((imageUrl, i) => (
-                  <div 
-                    key={i}
-                    className="aspect-square rounded-lg overflow-hidden border-2 border-border/50 group hover:scale-105 transition-transform duration-300"
-                  >
-                    <img 
-                      src={imageUrl} 
-                      alt={`Professional sock design ${i + 1}`}
-                      className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
-                    />
-                  </div>
-                ))}
-              </div>
-              
-              <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium shadow-lg">
-                Production Ready!
-              </div>
+            <div className="grid grid-cols-3 gap-4">
+              <img 
+                src="https://cdn.hercules.app/file_IzLbgi1WU8C2xpHzuVnDgLdl"
+                alt="Custom sock design sample 1"
+                className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300"
+              />
+              <img 
+                src="https://cdn.hercules.app/file_oG69oriAI2ONYm9u8zoSA6U3"
+                alt="Custom sock design sample 2"
+                className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300 mt-8"
+              />
+              <img 
+                src="https://cdn.hercules.app/file_mzsELZDjB1DZ7b4oylJFM2UH"
+                alt="Custom sock design sample 3"
+                className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300"
+              />
+              <img 
+                src="https://cdn.hercules.app/file_cALuCwK2kknSRMhY5jtYn2Nb"
+                alt="Custom sock design sample 4"
+                className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300 -mt-4"
+              />
+              <img 
+                src="https://cdn.hercules.app/file_h5KEBQQsQJLA3udsMIsgoyap"
+                alt="Custom sock design sample 5"
+                className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300 mt-4"
+              />
+              <img 
+                src="https://cdn.hercules.app/file_8q86OBxhJTYZ4GmPYPD79e1k"
+                alt="Custom sock design sample 6"
+                className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300 -mt-8"
+              />
+            </div>
+
+            {/* Floating Elements */}
+            <div className="absolute -top-4 -right-4 bg-background border border-border rounded-lg px-4 py-2 shadow-lg">
+              <div className="text-sm font-semibold text-primary">Fast Delivery</div>
+              <div className="text-xs text-muted-foreground">48 Hours</div>
             </div>
             
-            {/* Floating elements */}
-            <div className="absolute -top-4 -left-4 bg-background border rounded-lg px-3 py-2 shadow-lg">
-              <span className="text-sm font-medium">✨ Custom Designs</span>
-            </div>
-            <div className="absolute -bottom-4 -left-4 bg-background border rounded-lg px-3 py-2 shadow-lg">
-              <span className="text-sm font-medium">Fast Delivery</span>
+            <div className="absolute -bottom-4 -left-4 bg-background border border-border rounded-lg px-4 py-2 shadow-lg">
+              <div className="text-sm font-semibold text-primary">100% Custom</div>
+              <div className="text-xs text-muted-foreground">Your Vision</div>
             </div>
           </div>
         </div>
-      </div>
-      
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-32 h-80 w-80 rounded-full bg-primary/5 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-32 h-80 w-80 rounded-full bg-secondary/5 blur-3xl"></div>
       </div>
     </section>
   );

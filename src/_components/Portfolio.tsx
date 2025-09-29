@@ -5,118 +5,183 @@ import { ExternalLink } from "lucide-react";
 
 export default function Portfolio() {
   const handleViewPortfolio = () => {
-    window.open("https://drive.google.com/drive/folders/1iLC2QJU4Tb_9FCAN7iLiu5YZAjLayvnY?usp=drive_link", "_blank");
+    window.open('https://drive.google.com/drive/folders/1iLC2QJU4Tb_9FCAN7iLiu5YZAjLayvnY?usp=drive_link', '_blank');
   };
 
-  const portfolioItems = [
-    {
-      id: 1,
-      category: "Sports & Fitness",
-      title: "Athletic Performance Series",
-      client: "FitnessPro",
-      description: "Moisture-wicking compression socks with targeted cushioning for marathon runners.",
-      badge: "Sports & Fitness",
-      image: "https://cdn.hercules.app/file_0rdqY6aPwMzSmLvaqpaBl3yS"
-    },
-    {
-      id: 2,
-      category: "Corporate",
-      title: "Luxury Business Collection", 
-      client: "Executive Corp",
-      description: "Premium dress socks with subtle branding and anti-odor technology.",
-      badge: "Corporate",
-      image: "https://cdn.hercules.app/file_IOdkbD1vHVeOvwV0CYVbKler"
-    },
-    {
-      id: 3,
-      category: "Children",
-      title: "Fun Kids Adventure Line",
-      client: "Little Explorers",
-      description: "Colorful, educational socks with animal patterns and non-slip grips.",
-      badge: "Children",
-      image: "https://cdn.hercules.app/file_KNDpo5NN6nB5bRb8zqeu3jaB"
-    },
-    {
-      id: 4,
-      category: "Sustainable",
-      title: "Eco-Conscious Collection",
-      client: "GreenStep Co",
-      description: "Bamboo fiber socks with recycled packaging and carbon-neutral shipping.",
-      badge: "Sustainable",
-      image: "https://cdn.hercules.app/file_XzQ0vpi1xjoorQ9VSztSwqSE"
-    },
-    {
-      id: 5,
-      category: "Gaming",
-      title: "Gaming Culture Series",
-      client: "PixelWear",
-      description: "Retro gaming-themed socks with LED fiber optic elements and comfort padding.",
-      badge: "Gaming",
-      image: "https://cdn.hercules.app/file_HMgRSBy4tWDI0ySYXguj7P2Y"
-    },
-    {
-      id: 6,
-      category: "Medical",
-      title: "Medical Compression Line",
-      client: "HealthCare Plus",
-      description: "Graduated compression socks designed for healthcare professionals and patients.",
-      badge: "Medical",
-      image: "https://cdn.hercules.app/file_nh4cMTk11jh6ierxvO9fqfbB"
-    }
-  ];
-
   return (
-    <section className="py-24 bg-muted/50">
+    <section className="py-24 bg-muted/30" id="portfolio">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Our Portfolio</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From concept sketches to production-ready designs, see how we've helped clients 
-            launch successful sock brands across diverse markets.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Our Portfolio
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Explore our diverse range of sock designs across different industries and styles
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {portfolioItems.map((item) => (
-            <div key={item.id} className="space-y-4">
-              {/* Banner Image */}
-              <div className="relative overflow-hidden rounded-lg shadow-lg group">
-                <img
-                  src={item.image}
-                  alt={`${item.title} sock design showcase`}
-                  className="w-full h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-
-              {/* Card Content */}
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge variant="secondary" className="text-xs">
-                      {item.badge}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-lg">{item.title}</CardTitle>
-                  <p className="text-sm text-muted-foreground">Client: {item.client}</p>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </CardContent>
-              </Card>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {/* Athletic Performance Series */}
+          <div className="space-y-4">
+            <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="https://cdn.hercules.app/file_0rdqY6aPwMzSmLvaqpaBl3yS"
+                alt="Athletic Performance Series sock designs"
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              />
             </div>
-          ))}
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Badge variant="secondary">Sports & Fitness</Badge>
+                </div>
+                <CardTitle className="text-xl">Athletic Performance Series</CardTitle>
+                <p className="text-sm text-muted-foreground">Client: FitnessPro</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Moisture-wicking compression socks with enhanced cushioning for optimal athletic performance and recovery.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Luxury Business Collection */}
+          <div className="space-y-4">
+            <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="https://cdn.hercules.app/file_IOdkbD1vHVeOvwV0CYVbKler"
+                alt="Luxury Business Collection sock designs"
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Badge variant="secondary">Business</Badge>
+                </div>
+                <CardTitle className="text-xl">Luxury Business Collection</CardTitle>
+                <p className="text-sm text-muted-foreground">Client: Corporate Elite</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Premium dress socks featuring sophisticated patterns and luxury materials for the discerning professional.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Fun Kids Adventure Line */}
+          <div className="space-y-4">
+            <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="https://cdn.hercules.app/file_KNDpo5NN6nB5bRb8zqeu3jaB"
+                alt="Fun Kids Adventure Line sock designs"
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Badge variant="secondary">Kids</Badge>
+                </div>
+                <CardTitle className="text-xl">Fun Kids Adventure Line</CardTitle>
+                <p className="text-sm text-muted-foreground">Client: PlayTime Co.</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Colorful and playful designs that spark imagination, made with soft, durable materials perfect for active children.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Eco-Conscious Collection */}
+          <div className="space-y-4">
+            <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="https://cdn.hercules.app/file_XzQ0vpi1xjoorQ9VSztSwqSE"
+                alt="Eco-Conscious Collection sock designs"
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Badge variant="secondary">Eco-Friendly</Badge>
+                </div>
+                <CardTitle className="text-xl">Eco-Conscious Collection</CardTitle>
+                <p className="text-sm text-muted-foreground">Client: GreenStep</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Sustainable sock designs using organic cotton and recycled materials with nature-inspired patterns.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Gaming Culture Series */}
+          <div className="space-y-4">
+            <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="https://cdn.hercules.app/file_HMgRSBy4tWDI0ySYXguj7P2Y"
+                alt="Gaming Culture Series sock designs"
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Badge variant="secondary">Gaming</Badge>
+                </div>
+                <CardTitle className="text-xl">Gaming Culture Series</CardTitle>
+                <p className="text-sm text-muted-foreground">Client: GameOn!</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Bold, vibrant designs featuring gaming-inspired graphics and comfortable extended-wear materials for long gaming sessions.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Medical Compression Line */}
+          <div className="space-y-4">
+            <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="https://cdn.hercules.app/file_nh4cMTk11jh6ierxvO9fqfbB"
+                alt="Medical Compression Line sock designs"
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Badge variant="secondary">Medical</Badge>
+                </div>
+                <CardTitle className="text-xl">Medical Compression Line</CardTitle>
+                <p className="text-sm text-muted-foreground">Client: HealthCare Plus</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Therapeutic compression socks designed for medical professionals and patients requiring circulation support.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
-        <div className="text-center">
-          <Button onClick={handleViewPortfolio} size="lg" className="group">
-            View Complete Portfolio
-            <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <p className="text-sm text-muted-foreground mt-2">
-            Browse our complete collection of 500+ sock designs and client success stories
+        {/* Centered Button Section with Proper Spacing */}
+        <div className="text-center pt-12 mt-16 border-t border-border">
+          <h3 className="text-xl font-semibold mb-2">Explore Our Complete Work</h3>
+          <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+            View our comprehensive portfolio with detailed project galleries and client case studies
           </p>
+          <Button onClick={handleViewPortfolio} size="lg" className="gap-2">
+            <ExternalLink className="w-4 h-4" />
+            View Complete Portfolio
+          </Button>
         </div>
       </div>
     </section>
