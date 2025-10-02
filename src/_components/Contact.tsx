@@ -93,7 +93,7 @@ export default function Contact() {
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email Us",
-      details: "hello@designyoursocks.com",
+      details: "info@designyoursocks.com",
       description: "Get a response within 2 hours"
     },
     {
