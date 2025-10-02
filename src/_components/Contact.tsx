@@ -13,22 +13,22 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs.tsx";
 import { toast } from "sonner";
 import { api } from "@/convex/_generated/api";
-import { 
-  MessageCircle, 
-  Calculator, 
+import {
+  MessageCircle,
+  Calculator,
   Mail,
   Phone,
   MapPin,
   Clock,
   Send,
-  CheckCircle
-} from "lucide-react";
+  CheckCircle } from
+"lucide-react";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email"),
   company: z.string().optional(),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters")
 });
 
 const quoteSchema = z.object({
@@ -39,7 +39,7 @@ const quoteSchema = z.object({
   quantity: z.string().min(1, "Please select a quantity range"),
   timeline: z.string().min(1, "Please select a timeline"),
   budget: z.string().min(1, "Please select a budget range"),
-  description: z.string().min(10, "Please provide project details"),
+  description: z.string().min(10, "Please provide project details")
 });
 
 type ContactForm = z.infer<typeof contactSchema>;
@@ -48,16 +48,16 @@ type QuoteForm = z.infer<typeof quoteSchema>;
 export default function Contact() {
   const [activeTab, setActiveTab] = useState("contact");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const submitContact = useMutation(api.contacts.submitContact);
   const submitQuote = useMutation(api.contacts.submitQuote);
 
   const contactForm = useForm<ContactForm>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(contactSchema)
   });
 
   const quoteForm = useForm<QuoteForm>({
-    resolver: zodResolver(quoteSchema),
+    resolver: zodResolver(quoteSchema)
   });
 
   const handleContactSubmit = async (data: ContactForm) => {
@@ -65,7 +65,7 @@ export default function Contact() {
     try {
       await submitContact({
         ...data,
-        source: "contact",
+        source: "contact"
       });
       toast.success("Message sent successfully! We'll get back to you within 24 hours.");
       contactForm.reset();
@@ -90,31 +90,31 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    {
-      icon: <Mail className="h-5 w-5" />,
-      title: "Email Us",
-      details: "info@designyoursocks.com",
-      description: "Get a response within 2 hours"
-    },
-    {
-      icon: <Phone className="h-5 w-5" />,
-      title: "Call Us", 
-      details: "+1 (555) 123-4567",
-      description: "Mon-Fri, 9AM-6PM EST"
-    },
-    {
-      icon: <MapPin className="h-5 w-5" />,
-      title: "Visit Us",
-      details: "123 Design Street, Creative City, NY 10001",
-      description: "By appointment only"
-    },
-    {
-      icon: <Clock className="h-5 w-5" />,
-      title: "Response Time",
-      details: "< 2 Hours",
-      description: "Average email response time"
-    }
-  ];
+  {
+    icon: <Mail className="h-5 w-5" />,
+    title: "Email Us",
+    details: "info@designyoursocks.com",
+    description: "Get a response within 2 hours"
+  },
+  {
+    icon: <Phone className="h-5 w-5" />,
+    title: "Call Us",
+    details: "+1 (555) 123-4567",
+    description: "Mon-Fri, 9AM-6PM EST"
+  },
+  {
+    icon: <MapPin className="h-5 w-5" />,
+    title: "Visit Us",
+    details: "123 Design Street, Creative City, NY 10001",
+    description: "By appointment only"
+  },
+  {
+    icon: <Clock className="h-5 w-5" />,
+    title: "Response Time",
+    details: "< 2 Hours",
+    description: "Average email response time"
+  }];
+
 
   return (
     <section id="contact" className="py-16 lg:py-24">
@@ -152,50 +152,50 @@ export default function Contact() {
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="contact-name">Name *</Label>
-                          <Input 
+                          <Input
                             id="contact-name"
                             placeholder="Your full name"
-                            {...contactForm.register("name")}
-                          />
-                          {contactForm.formState.errors.name && (
-                            <p className="text-sm text-destructive">{contactForm.formState.errors.name.message}</p>
-                          )}
+                            {...contactForm.register("name")} />
+
+                          {contactForm.formState.errors.name &&
+                          <p className="text-sm text-destructive">{contactForm.formState.errors.name.message}</p>
+                          }
                         </div>
                         
                         <div className="space-y-2">
                           <Label htmlFor="contact-email">Email *</Label>
-                          <Input 
+                          <Input
                             id="contact-email"
                             type="email"
                             placeholder="your.email@example.com"
-                            {...contactForm.register("email")}
-                          />
-                          {contactForm.formState.errors.email && (
-                            <p className="text-sm text-destructive">{contactForm.formState.errors.email.message}</p>
-                          )}
+                            {...contactForm.register("email")} />
+
+                          {contactForm.formState.errors.email &&
+                          <p className="text-sm text-destructive">{contactForm.formState.errors.email.message}</p>
+                          }
                         </div>
                       </div>
                       
                       <div className="space-y-2">
                         <Label htmlFor="contact-company">Company (optional)</Label>
-                        <Input 
+                        <Input
                           id="contact-company"
                           placeholder="Your company name"
-                          {...contactForm.register("company")}
-                        />
+                          {...contactForm.register("company")} />
+
                       </div>
                       
                       <div className="space-y-2">
                         <Label htmlFor="contact-message">Message *</Label>
-                        <Textarea 
+                        <Textarea
                           id="contact-message"
                           placeholder="Tell us about your sock design project..."
                           rows={4}
-                          {...contactForm.register("message")}
-                        />
-                        {contactForm.formState.errors.message && (
-                          <p className="text-sm text-destructive">{contactForm.formState.errors.message.message}</p>
-                        )}
+                          {...contactForm.register("message")} />
+
+                        {contactForm.formState.errors.message &&
+                        <p className="text-sm text-destructive">{contactForm.formState.errors.message.message}</p>
+                        }
                       </div>
                       
                       <Button type="submit" size="lg" disabled={isSubmitting} className="w-full">
@@ -210,37 +210,37 @@ export default function Contact() {
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="quote-name">Name *</Label>
-                          <Input 
+                          <Input
                             id="quote-name"
                             placeholder="Your full name"
-                            {...quoteForm.register("name")}
-                          />
-                          {quoteForm.formState.errors.name && (
-                            <p className="text-sm text-destructive">{quoteForm.formState.errors.name.message}</p>
-                          )}
+                            {...quoteForm.register("name")} />
+
+                          {quoteForm.formState.errors.name &&
+                          <p className="text-sm text-destructive">{quoteForm.formState.errors.name.message}</p>
+                          }
                         </div>
                         
                         <div className="space-y-2">
                           <Label htmlFor="quote-email">Email *</Label>
-                          <Input 
+                          <Input
                             id="quote-email"
                             type="email"
                             placeholder="your.email@example.com"
-                            {...quoteForm.register("email")}
-                          />
-                          {quoteForm.formState.errors.email && (
-                            <p className="text-sm text-destructive">{quoteForm.formState.errors.email.message}</p>
-                          )}
+                            {...quoteForm.register("email")} />
+
+                          {quoteForm.formState.errors.email &&
+                          <p className="text-sm text-destructive">{quoteForm.formState.errors.email.message}</p>
+                          }
                         </div>
                       </div>
                       
                       <div className="space-y-2">
                         <Label htmlFor="quote-company">Company (optional)</Label>
-                        <Input 
+                        <Input
                           id="quote-company"
                           placeholder="Your company name"
-                          {...quoteForm.register("company")}
-                        />
+                          {...quoteForm.register("company")} />
+
                       </div>
                       
                       <div className="grid md:grid-cols-2 gap-4">
@@ -256,9 +256,9 @@ export default function Contact() {
                               <SelectItem value="full_service">Full-Service Partnership (Custom)</SelectItem>
                             </SelectContent>
                           </Select>
-                          {quoteForm.formState.errors.projectType && (
-                            <p className="text-sm text-destructive">{quoteForm.formState.errors.projectType.message}</p>
-                          )}
+                          {quoteForm.formState.errors.projectType &&
+                          <p className="text-sm text-destructive">{quoteForm.formState.errors.projectType.message}</p>
+                          }
                         </div>
                         
                         <div className="space-y-2">
@@ -312,15 +312,15 @@ export default function Contact() {
                       
                       <div className="space-y-2">
                         <Label htmlFor="quote-description">Project Description *</Label>
-                        <Textarea 
+                        <Textarea
                           id="quote-description"
                           placeholder="Describe your sock design vision, target audience, style preferences, etc..."
                           rows={4}
-                          {...quoteForm.register("description")}
-                        />
-                        {quoteForm.formState.errors.description && (
-                          <p className="text-sm text-destructive">{quoteForm.formState.errors.description.message}</p>
-                        )}
+                          {...quoteForm.register("description")} />
+
+                        {quoteForm.formState.errors.description &&
+                        <p className="text-sm text-destructive">{quoteForm.formState.errors.description.message}</p>
+                        }
                       </div>
                       
                       <Button type="submit" size="lg" disabled={isSubmitting} className="w-full">
@@ -340,18 +340,18 @@ export default function Contact() {
                 <CardTitle className="text-lg">Contact Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-primary/10 text-primary flex-shrink-0">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <div className="font-medium">{info.title}</div>
-                      <div className="text-sm text-muted-foreground mb-1">{info.details}</div>
-                      <div className="text-xs text-muted-foreground">{info.description}</div>
-                    </div>
-                  </div>
-                ))}
+                {contactInfo.map((info, index) => {}
+
+
+
+
+
+
+
+
+
+
+                )}
               </CardContent>
             </Card>
             
@@ -374,6 +374,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
