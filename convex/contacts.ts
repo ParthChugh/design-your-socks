@@ -1,5 +1,8 @@
 import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const submitContact = mutation({
   args: {
@@ -10,10 +13,34 @@ export const submitContact = mutation({
     source: v.string(),
   },
   handler: async (ctx, args) => {
-    return await ctx.db.insert("contacts", {
+    // Store in database
+    const contactId = await ctx.db.insert("contacts", {
       ...args,
       status: "new",
     });
+
+    // Send email notification via Resend
+    try {
+      await resend.emails.send({
+        from: 'DesignYourSocks <noreply@designyoursocks.com>',
+        to: ['info@designyoursocks.com'],
+        subject: `New Contact Form Submission from ${args.name}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${args.name}</p>
+          <p><strong>Email:</strong> ${args.email}</p>
+          ${args.company ? `<p><strong>Company:</strong> ${args.company}</p>` : ''}
+          <p><strong>Message:</strong></p>
+          <p>${args.message.replace(/\n/g, '<br>')}</p>
+          <p><strong>Source:</strong> ${args.source}</p>
+        `,
+      });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      // Don't throw error - we still want to save the contact even if email fails
+    }
+
+    return contactId;
   },
 });
 
@@ -29,10 +56,37 @@ export const submitQuote = mutation({
     description: v.string(),
   },
   handler: async (ctx, args) => {
-    return await ctx.db.insert("quotes", {
+    // Store in database
+    const quoteId = await ctx.db.insert("quotes", {
       ...args,
       status: "new",
     });
+
+    // Send email notification via Resend
+    try {
+      await resend.emails.send({
+        from: 'DesignYourSocks <noreply@designyoursocks.com>',
+        to: ['info@designyoursocks.com'],
+        subject: `New Quote Request from ${args.name}`,
+        html: `
+          <h2>New Quote Request</h2>
+          <p><strong>Name:</strong> ${args.name}</p>
+          <p><strong>Email:</strong> ${args.email}</p>
+          ${args.company ? `<p><strong>Company:</strong> ${args.company}</p>` : ''}
+          <p><strong>Project Type:</strong> ${args.projectType}</p>
+          <p><strong>Quantity:</strong> ${args.quantity}</p>
+          <p><strong>Timeline:</strong> ${args.timeline}</p>
+          <p><strong>Budget:</strong> ${args.budget}</p>
+          <p><strong>Description:</strong></p>
+          <p>${args.description.replace(/\n/g, '<br>')}</p>
+        `,
+      });
+    } catch (error) {
+      console.error('Failed to send quote email:', error);
+      // Don't throw error - we still want to save the quote even if email fails
+    }
+
+    return quoteId;
   },
 });
 

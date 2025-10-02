@@ -340,18 +340,18 @@ export default function Contact() {
                 <CardTitle className="text-lg">Contact Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {contactInfo.map((info, index) => {}
-
-
-
-
-
-
-
-
-
-
-                )}
+                {contactInfo.map((info, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                      {info.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-sm">{info.title}</h4>
+                      <p className="text-sm font-medium">{info.details}</p>
+                      <p className="text-xs text-muted-foreground">{info.description}</p>
+                    </div>
+                  </div>
+                ))}
               </CardContent>
             </Card>
             

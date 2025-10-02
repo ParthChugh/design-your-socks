@@ -25,7 +25,7 @@ export default function Portfolio() {
           <div className="space-y-4">
             <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="https://cdn.hercules.app/file_0rdqY6aPwMzSmLvaqpaBl3yS"
+                src="https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=600&h=450&fit=crop&crop=center"
                 alt="Athletic Performance Series sock designs"
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               />
@@ -50,7 +50,7 @@ export default function Portfolio() {
           <div className="space-y-4">
             <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="https://cdn.hercules.app/file_IOdkbD1vHVeOvwV0CYVbKler"
+                src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=450&fit=crop&crop=center"
                 alt="Luxury Business Collection sock designs"
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               />
@@ -75,7 +75,7 @@ export default function Portfolio() {
           <div className="space-y-4">
             <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="https://cdn.hercules.app/file_KNDpo5NN6nB5bRb8zqeu3jaB"
+                src="https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=600&h=450&fit=crop&crop=center"
                 alt="Fun Kids Adventure Line sock designs"
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               />
@@ -100,7 +100,7 @@ export default function Portfolio() {
           <div className="space-y-4">
             <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="https://cdn.hercules.app/file_XzQ0vpi1xjoorQ9VSztSwqSE"
+                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=450&fit=crop&crop=center"
                 alt="Eco-Conscious Collection sock designs"
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               />
@@ -125,7 +125,7 @@ export default function Portfolio() {
           <div className="space-y-4">
             <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="https://cdn.hercules.app/file_HMgRSBy4tWDI0ySYXguj7P2Y"
+                src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=450&fit=crop&crop=center"
                 alt="Gaming Culture Series sock designs"
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               />
@@ -150,7 +150,7 @@ export default function Portfolio() {
           <div className="space-y-4">
             <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="https://cdn.hercules.app/file_nh4cMTk11jh6ierxvO9fqfbB"
+                src="https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=600&h=450&fit=crop&crop=center"
                 alt="Medical Compression Line sock designs"
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               />

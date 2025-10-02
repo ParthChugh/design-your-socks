@@ -94,32 +94,32 @@ export default function Hero() {
           <div className="relative">
             <div className="grid grid-cols-3 gap-4">
               <img 
-                src="https://cdn.hercules.app/file_IzLbgi1WU8C2xpHzuVnDgLdl"
+                src="https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=400&h=400&fit=crop&crop=center"
                 alt="Custom sock design sample 1"
                 className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300"
               />
               <img 
-                src="https://cdn.hercules.app/file_oG69oriAI2ONYm9u8zoSA6U3"
+                src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&h=400&fit=crop&crop=center"
                 alt="Custom sock design sample 2"
                 className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300 mt-8"
               />
               <img 
-                src="https://cdn.hercules.app/file_mzsELZDjB1DZ7b4oylJFM2UH"
+                src="https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=400&h=400&fit=crop&crop=center"
                 alt="Custom sock design sample 3"
                 className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300"
               />
               <img 
-                src="https://cdn.hercules.app/file_cALuCwK2kknSRMhY5jtYn2Nb"
+                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center"
                 alt="Custom sock design sample 4"
                 className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300 -mt-4"
               />
               <img 
-                src="https://cdn.hercules.app/file_h5KEBQQsQJLA3udsMIsgoyap"
+                src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&h=400&fit=crop&crop=center"
                 alt="Custom sock design sample 5"
                 className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300 mt-4"
               />
               <img 
-                src="https://cdn.hercules.app/file_8q86OBxhJTYZ4GmPYPD79e1k"
+                src="https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=400&h=400&fit=crop&crop=center"
                 alt="Custom sock design sample 6"
                 className="w-full aspect-square object-cover rounded-2xl shadow-lg border border-border hover:scale-105 transition-transform duration-300 -mt-8"
               />

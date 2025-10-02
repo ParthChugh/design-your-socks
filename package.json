@@ -37,13 +37,13 @@
     "react-resizable-panels": "^3.0.6",
     "react-router-dom": "^7.9.1",
     "recharts": "^2.15.4",
+    "resend": "^4.0.1",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.13",
     "use-debounce": "^10.0.6",
     "vaul": "^1.1.2",
-    "zod": "^3.25.76",
-    "resend": "^4.0.1"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@convex-dev/eslint-plugin": "0.0.1-alpha.4",
