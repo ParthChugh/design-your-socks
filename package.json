@@ -42,7 +42,8 @@
     "tailwindcss": "^4.1.13",
     "use-debounce": "^10.0.6",
     "vaul": "^1.1.2",
-    "zod": "^3.25.76"
+    "zod": "^3.25.76",
+    "resend": "^4.0.1"
   },
   "devDependencies": {
     "@convex-dev/eslint-plugin": "0.0.1-alpha.4",
@@ -52,8 +53,6 @@
     "@types/node": "^24.5.2",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "@usehercules/eslint-plugin": "^1.0.18",
-    "@usehercules/vite": "^1.0.18",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.21",
